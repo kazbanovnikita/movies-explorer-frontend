@@ -1,0 +1,150 @@
+.about-project {
+  background-color: #202020;
+  padding: 70px 18px;
+}
+
+.about-project__description {
+  margin: 0 0 28px;
+  color: #fff;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.72px;
+}
+
+.about-project__list {
+  list-style: none;
+  padding: 60px 0 0;
+  border-top: 1px solid #dadada;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin: 0;
+}
+
+.about-project__title {
+  color: #fff;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  margin: 0 0 16px;
+}
+
+.about-project__subtitle {
+  margin: 0;
+  color: #fff;
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.about-project__table {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  margin: 70px 0 0;
+}
+
+.about-project__stats {
+  background-color: #303030;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+}
+
+.about-project__stats_first-element {
+  background-color: #3ddc84;
+  color: #000;
+}
+
+.about-project__stats-description {
+  color: #a0a0a0;
+  margin: 10px 0 0;
+  font-family: Intel;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+@media screen and (min-width: 650px) {
+  .about-project__table {
+    grid-template-columns: 140px 1fr;
+  }
+
+  .about-project__list {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .about-project__title {
+    margin-bottom: 22px;
+  }
+
+  .about-project {
+    padding: 90px 50px;
+  }
+
+  .about-project__description {
+    margin-bottom: 23px;
+  }
+
+  .about-project__table {
+    margin-top: 93px;
+  }
+
+  .about-project__stats-description {
+    margin-top: 14px;
+  }
+
+  .about-project__title {
+    font-size: 20px;
+    letter-spacing: -0.8px;
+  }
+
+  .about-project__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about-project__table {
+    grid-template-columns: 228px 1fr;
+  }
+
+  .about-project__list {
+    gap: 26px;
+  }
+
+  .about-project__title {
+    margin-bottom: 26px;
+  }
+
+  .about-project {
+    padding: 110px 90px;
+  }
+
+  .about-project__table {
+    margin-top: 110px;
+  }
+
+  .about-project__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

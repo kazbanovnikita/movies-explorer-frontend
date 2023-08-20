@@ -1,0 +1,11 @@
+@import url('./vendors/normalize.css');
+@import url('./vendors/fonts/fonts.css');
+
+.page {
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
