@@ -29,6 +29,7 @@
   justify-content: space-between;
 }
 
+
 .profile__info-wrapper:last-of-type {
   border-bottom: none;
   margin-bottom: 0;
@@ -40,15 +41,16 @@
   text-align: end;
   color: #fff;
   text-align: right;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 11px;
   font-weight: 400;
   outline: none;
+  min-width: 75%;
 }
 
 .profile__label {
   color: #fff;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 11px;
   font-weight: 500;
 }
@@ -59,7 +61,7 @@
   border: none;
   color: #fff;
   text-align: center;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
 }
@@ -73,7 +75,7 @@
   text-decoration: none;
   color: #ee3465;
   text-align: center;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 12px;
   font-weight: 500;
 }

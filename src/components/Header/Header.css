@@ -4,13 +4,16 @@
   justify-content: space-between;
 }
 
-.header_verified {
+
+
+.header_black {
   background-color: #202020;
 }
 
-.header_not-verified {
+.header_blue {
   background-color: #073042;
 }
+
 
 .header__link:hover {
   opacity: 0.8;
@@ -31,7 +34,7 @@
     padding: 0 70px;
   }
 
-  .header_verified {
+  .header_is-verified {
     justify-content: unset;
   }
 }

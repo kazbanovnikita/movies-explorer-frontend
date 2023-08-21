@@ -8,7 +8,7 @@ function Error({ setIsErrorPage }) {
   }, [setIsErrorPage]);
 
   return (
-    <section className="error">
+    <main className="error">
       <h1 className="error__title">404</h1>
       <p className="error__subtitle">Страница не найдена</p>
       <Link
@@ -18,7 +18,7 @@ function Error({ setIsErrorPage }) {
       >
         Назад
       </Link>
-    </section>
+    </main>
   );
 }
 

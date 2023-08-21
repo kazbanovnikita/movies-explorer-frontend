@@ -22,7 +22,7 @@
   border: 1px solid #424242;
   border-radius: 6px;
   text-align: center;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 12px;
   font-weight: 500;
   align-self: center;
@@ -34,6 +34,7 @@
 
 @media screen and (min-width: 768px) {
   .movies-card-list__ul {
+    grid-template-columns: repeat(auto-fit, 339px);
     gap: 30px;
   }
 

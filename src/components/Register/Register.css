@@ -9,7 +9,7 @@
 .register__label {
   margin-bottom: 5px;
   color: #8b8b8b;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 10px;
   font-weight: 400;
   margin-top: 24px;
@@ -25,16 +25,21 @@
   border: none;
   border-bottom: 1px solid #424242;
   color: #fff;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
+  outline: none;
+}
+
+.register__input:focus{
+  border-bottom: 1px solid #4285F4;;
 }
 
 .register__error {
   /* margin-top: 6px; */
   color: #ee3465;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;

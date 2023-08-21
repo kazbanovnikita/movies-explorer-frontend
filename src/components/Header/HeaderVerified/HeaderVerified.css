@@ -45,7 +45,7 @@
 .header_verified__link {
   text-decoration: none;
   color: #fff;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   padding-bottom: 7px;
@@ -73,7 +73,7 @@
 .header_verified__profile-link {
   text-decoration: none;
   color: #fff;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 30px;
@@ -177,5 +177,14 @@
     padding: 0;
     margin-top: 28px;
     font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header_verified__profile-link {
+    position: unset;
+    margin-left: 746px;
+    margin-top: 21px;
+    align-self: unset;
   }
 }

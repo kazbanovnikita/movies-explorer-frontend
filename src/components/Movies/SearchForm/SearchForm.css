@@ -6,6 +6,7 @@
   border: none;
   margin: 7px 7px 7px 0;
   padding: 0;
+  cursor: pointer;
 }
 
 .search-form__button:hover {
@@ -29,13 +30,18 @@
   border: none;
   margin-left: 18px;
   color: #8b8b8b;
-  font-family: Inter;
+  font-family: Inter, Arial, sans-serif;
   font-size: 11px;
   font-weight: 400;
   line-height: 18px;
   outline: none;
   width: 100%;
 }
+
+.search-form:focus-within{
+  border: 1px solid #4285F4
+}
+
 
 @media screen and (min-width: 768px) {
   .search-form__input {
