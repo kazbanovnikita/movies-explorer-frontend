@@ -32,6 +32,11 @@
   opacity: 0.8;
 }
 
+.movies-card-list__not-found{
+  color: #fff;
+  align-self: center;
+}
+
 @media screen and (min-width: 768px) {
   .movies-card-list__ul {
     grid-template-columns: repeat(auto-fit, 339px);

@@ -1,12 +1,26 @@
 import "./Register.css";
 import Form from "../Form/Form";
+import {useFormValidate} from "../../utils/hooks/useFormValidate"
+import { validateEmail, validateName} from "../../utils/constants"
 
-function Register() {
+function Register({onRegister, setValues}) {
+
+  const { values, handleChange, errors, isValid } = useFormValidate()
+
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    onRegister(values);
+    setValues({email: '', password: ''})
+  }
+
   return (
     <main className="register">
       <Form
         congrats={"Добро пожаловать!"}
         buttonText={"Зарегистрироваться"}
+        onSubmit={handleSubmit}
+        isValid={isValid}
         reg
       >
         <label className="register__label" htmlFor="name">
@@ -19,8 +33,12 @@ function Register() {
           name="name"
           placeholder="Имя"
           required
+          minLength={2}
+          maxLength={40}
+          onChange={handleChange}
+          value={values.name ?? ''}
         />
-        <span className="register__error"></span>
+        <span className="register__error">{errors.name || validateName(values.name).message}</span>
         <label className="register__label" htmlFor="email">
           E-mail
         </label>
@@ -31,8 +49,10 @@ function Register() {
           name="email"
           placeholder="Email"
           required
+          onChange={handleChange}
+          value={values.email ?? ''}
         />
-        <span className="register__error"></span>
+        <span className="register__error">{errors.email || validateEmail(values.email).message}</span>
         <label className="register__label" htmlFor="password">
           Пароль
         </label>
@@ -42,9 +62,13 @@ function Register() {
           id="password"
           name="password"
           placeholder="Пароль"
+          minLength={6}
+          maxLength={30}
           required
+          onChange={handleChange}
+          value={values.password ?? ''}
         />
-        <span className="register__error"></span>
+        <span className="register__error">{errors.password}</span>
       </Form>
     </main>
   );

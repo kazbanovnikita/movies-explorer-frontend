@@ -1,23 +1,35 @@
 import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
 
-function MoviesCardList({ saved, onClickShowMore }) {
+function MoviesCardList({
+  movies,
+  saved,
+  onClickShowMore,
+  buttonVisible,
+  onLike, 
+  onDelete,
+  savedMovies,
+}) 
+
+{
+  console.log(movies)
   return (
     <div className="movies-card-list">
-      <ul className="movies-card-list__ul">
-        <MoviesCard saved={saved} />
-        <MoviesCard saved={saved} />
-        <MoviesCard saved={saved} />
-        <MoviesCard saved={saved} />
-        <MoviesCard saved={saved} />
-        <MoviesCard saved={saved} />
-        <MoviesCard saved={saved} />
-      </ul>
-      {!saved && (
-        <button className="movies-card-list__button" onClick={onClickShowMore}>
-          Ещё
-        </button>
-      )}
+      { movies.length  !== 0 ?
+        (<ul className="movies-card-list__ul">
+          {movies.map((movie) => {
+            return <MoviesCard key={movie.id} movie={movie} onLike={onLike} onDelete={onDelete} saved={saved} savedMovies={savedMovies}/>;
+          })}
+        </ul>) : (<span className="movies-card-list__not-found">Ничего не найдено</span>)
+}
+      {!saved && buttonVisible &&(
+          <button
+            className="movies-card-list__button"
+            onClick={onClickShowMore}
+          >
+            Ещё
+          </button>
+        )}
     </div>
   );
 }

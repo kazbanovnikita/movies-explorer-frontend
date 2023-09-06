@@ -44,6 +44,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  width: 260px;
 }
 
 .register__error:last-of-type {
@@ -53,6 +54,10 @@
 @media screen and (min-width: 768px) {
   .register {
     padding: 232px 186px 0;
+  }
+
+  .register__error{
+    width: 396px;
   }
 
   .register__error:last-of-type {
