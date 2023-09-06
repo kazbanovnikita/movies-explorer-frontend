@@ -18,7 +18,7 @@ function MoviesCardList({
       { movies.length  !== 0 ?
         (<ul className="movies-card-list__ul">
           {movies.map((movie) => {
-            return <MoviesCard key={movie.id} movie={movie} onLike={onLike} onDelete={onDelete} saved={saved} savedMovies={savedMovies}/>;
+            return <MoviesCard key={movie.id ?? movie._id} movie={movie} onLike={onLike} onDelete={onDelete} saved={saved} savedMovies={savedMovies}/>;
           })}
         </ul>) : (<span className="movies-card-list__not-found">Ничего не найдено</span>)
 }

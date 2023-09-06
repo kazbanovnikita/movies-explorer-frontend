@@ -6,7 +6,7 @@ function NavTab() {
     <Navigation>
       <ul className="navTab__list">
         <li className="navTab__item">
-          <a className="navTab__link" href="#about-project" exact >О Проекте</a>
+          <a className="navTab__link" href="#about-project" >О Проекте</a>
         </li>
         <li className="navTab__item">
           <a className="navTab__link" href="#techs">Технологии</a>
