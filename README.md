@@ -5,5 +5,3 @@
 Frontend: https://nik24-movie-explorer.nomoredomainsicu.ru
 
 Backend: https://nik24-movie-explorer.nomoredomainsicu.ru/
-
-Ссылка на пул реквест: 

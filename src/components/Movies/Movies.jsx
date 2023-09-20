@@ -23,6 +23,10 @@ function Movies({ onLike, savedMovies}) {
     JSON.parse(localStorage.getItem("allMovies")) || []
   );
 
+  const [error, setError] = useState()
+
+  const [firstVisit, setFirstVist] = useState(true)
+
   const { initialCardsNumber, cardsPerLine } = useWidth();
   const [shownMoviesNumber, setShownMoviesNumber] =
     useState(initialCardsNumber);
@@ -42,14 +46,19 @@ function Movies({ onLike, savedMovies}) {
     localStorage.setItem("movies", JSON.stringify(moviesList));
   }
 
+  
+
   function handleSearhSubmit(value) {
-    setIsLoading(true)
-    setTimeout(()=>{
-      setIsLoading(false)
-    }, 1000)
+    if(value < 1){
+      setError('Нужно ввести ключевое слово')
+    } else {
+    setError('')
+    setFirstVist(false)
+    
     setSearchRequest(value);
     localStorage.setItem("searchQuery", value);
     handleSetFilteredMovies(allMovie, value, shortFilms);
+    }
   }
 
   const handleSearchShorts = (e) => {
@@ -63,6 +72,7 @@ function Movies({ onLike, savedMovies}) {
   };
 
   function getAllMovies() {
+    setIsLoading(true)
     apiMovie
       .getMovies()
       .then((movie) => {
@@ -71,6 +81,7 @@ function Movies({ onLike, savedMovies}) {
         localStorage.setItem("allMovies", JSON.stringify(movie));
       })
       .catch((err) => console.log(err))
+      .finally((() => setIsLoading(false)))
   }
 
   useEffect(() => {
@@ -84,12 +95,13 @@ function Movies({ onLike, savedMovies}) {
   }
 
   //////////////////
-
+/*
   useEffect(() => {
     getAllMovies();
   }, []);
-
+*/
   useEffect(() => {
+    getAllMovies();
     if (shortFilms) {
       const arr = filterShortMovies(getFilteredMovies(allMovie, searchRequest));
       setFilteredMovies(arr);
@@ -104,11 +116,14 @@ function Movies({ onLike, savedMovies}) {
     <main className="movies">
       <div className="movies__form-container">
         <SearchForm handleSearhSubmit={handleSearhSubmit} />
+        {window.innerWidth < 1024 ? (<div className="movies__search-error">{error}</div>) : ""}
         <FilterCheckbox
           onShortsCheck={handleSearchShorts}
           showShorts={shortFilms}
         />
-      </div> {isLoading ? (<Preloader />) : (
+      </div>
+      {window.innerWidth > 1024 ? (<div className="movies__search-error">{error}</div>) : ""} 
+      {isLoading ? (<Preloader />) : (
       <MoviesCardList
         onLike={onLike}
         saved={false}
@@ -116,6 +131,7 @@ function Movies({ onLike, savedMovies}) {
         movies={filter().slice(0, shownMoviesNumber)}
         buttonVisible={moreButtonVisible}
         savedMovies={savedMovies}
+        firstVisit={firstVisit}
       />
       )}
     </main>

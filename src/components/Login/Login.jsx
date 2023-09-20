@@ -1,10 +1,10 @@
 import Form from "../Form/Form";
 import "./Login.css";
-import {useFormValidate} from "../../utils/hooks/useFormValidate"
+import { useFormValidate } from "../../utils/hooks/useFormValidate";
+import { validateEmail } from "../../utils/constants";
 
 function Login({ onLogin }) {
-  const { values, handleChange, errors, isValid } = useFormValidate()
-
+  const { values, handleChange, errors, isValid } = useFormValidate();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -14,11 +14,14 @@ function Login({ onLogin }) {
     });
   }
 
- 
-
   return (
     <main className="login">
-      <Form congrats={"Рады видеть!"} buttonText={"Войти"} onSubmit={handleSubmit} isValid={isValid}>
+      <Form
+        congrats={"Рады видеть!"}
+        buttonText={"Войти"}
+        onSubmit={handleSubmit}
+        isValid={isValid && validateEmail(values.email).message === ""}
+      >
         <label className="login__label" htmlFor="email">
           E-mail
         </label>
@@ -28,11 +31,14 @@ function Login({ onLogin }) {
           id="email"
           name="email"
           placeholder="Email"
-          required
           onChange={handleChange}
           value={values.email ?? ""}
+          required
         />
-        <span className="login__error">{errors.email}</span>
+        <span className="login__error">
+          {" "}
+          {errors.email || validateEmail(values.email).message}
+        </span>
         <label className="login__label" htmlFor="password">
           Пароль
         </label>

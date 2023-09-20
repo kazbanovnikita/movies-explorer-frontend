@@ -2,7 +2,7 @@ import "./HeaderVerified.css";
 import Icon from "../../../images/user-icon.svg";
 import { useState } from "react";
 import Navigation from "../../Navigation/Navigation";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 function HeaderVerified() {
   const location = useLocation();
   const path = location.pathname;
@@ -32,38 +32,38 @@ function HeaderVerified() {
             <Navigation>
               <ul className="header_verified__list">
                 <li className="header_verified__item">
-                  <Link
+                  <NavLink
                     className={`header_verified__link ${
                       path === "/" && "header_verified__link_active"
                     }`}
                     to="/"
                   >
                     Главная
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="header_verified__item">
-                  <Link
+                  <NavLink
                     className={`header_verified__link ${
                       path === "/movies" && "header_verified__link_active"
                     }`}
                     to="/movies"
                   >
                     Фильмы
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="header_verified__item">
-                  <Link
+                  <NavLink
                     className={`header_verified__link ${
                       path === "/saved-movies" && "header_verified__link_active"
                     }`}
                     to="/saved-movies"
                   >
                     Сохранённые фильмы
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </Navigation>
-            <Link className="header_verified__profile-link" to="/profile">
+            <NavLink className="header_verified__profile-link" to="/profile">
               Аккаунт
               <div className="header_verified__icon-wrapper">
                 <img
@@ -72,21 +72,21 @@ function HeaderVerified() {
                   alt="иконка пользователя"
                 />
               </div>
-            </Link>
+            </NavLink>
           </div>
         </div>
       )}
       {
         <div className="header_verified__wrapper">
           <Navigation className="header_verified__link-wrapper">
-            <Link className="header_verified__link" to="/movies">
+            <NavLink className="header_verified__link" to="/movies">
               Фильмы
-            </Link>
-            <Link className="header_verified__link" to="/saved-movies">
+            </NavLink>
+            <NavLink className="header_verified__link" to="/saved-movies">
               Сохранённые фильмы
-            </Link>
+            </NavLink>
           </Navigation>
-          <Link className="header_verified__profile-link" to="/profile">
+          <NavLink className="header_verified__profile-link" to="/profile">
             Аккаунт
             <div className="header_verified__icon-wrapper">
               <img
@@ -95,7 +95,7 @@ function HeaderVerified() {
                 alt="иконка пользователя"
               />
             </div>
-          </Link>
+          </NavLink>
         </div>
       }
     </div>

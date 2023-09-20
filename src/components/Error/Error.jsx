@@ -13,7 +13,7 @@ function Error({ setIsErrorPage }) {
       <p className="error__subtitle">Страница не найдена</p>
       <Link
         className="error__link"
-        to="/"
+        
         onClick={() => setIsErrorPage(false)}
       >
         Назад

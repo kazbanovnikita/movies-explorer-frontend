@@ -3,7 +3,6 @@ import logo from '../../images/logo.svg'
 import { Link } from "react-router-dom";
 
 function Form({congrats, children, buttonText, onSubmit, reg, log, isValid}){
-    console.log(isValid)
     return(
         <div className='form'>
             <Link className='form__to-home-link' to="/">

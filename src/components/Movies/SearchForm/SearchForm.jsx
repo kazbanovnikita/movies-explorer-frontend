@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 function SearchForm({ handleSearhSubmit, saved}) {
   const [value, setValue] = useState("");
+  
 
   function firstSavedMovieRender(){
     setValue("")
@@ -26,6 +27,7 @@ function SearchForm({ handleSearhSubmit, saved}) {
       className="search-form search-form_focused"
       name="search-form"
       onSubmit={handleSubmit}
+      noValidate
     >
       <input
         className="search-form__input"

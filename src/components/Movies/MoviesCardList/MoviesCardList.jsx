@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
 
@@ -9,9 +10,13 @@ function MoviesCardList({
   onLike, 
   onDelete,
   savedMovies,
+  firstVisit
 }) 
-
 {
+  const text =  !firstVisit ?  "Ничего не найдено" : "Вы пока ничего не искали"
+
+ 
+
   console.log(movies)
   return (
     <div className="movies-card-list">
@@ -20,7 +25,7 @@ function MoviesCardList({
           {movies.map((movie) => {
             return <MoviesCard key={movie.id ?? movie._id} movie={movie} onLike={onLike} onDelete={onDelete} saved={saved} savedMovies={savedMovies}/>;
           })}
-        </ul>) : (<span className="movies-card-list__not-found">Ничего не найдено</span>)
+        </ul>) : (<span className="movies-card-list__not-found">{text}</span>)
 }
       {!saved && buttonVisible &&(
           <button

@@ -11,6 +11,11 @@
   margin-bottom: 95px;
 }
 
+.movies__search-error {
+  color: #DC143C;
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 768px) {
   .movies {
     padding: 60px 30px 80px;
@@ -24,5 +29,11 @@
 
   .movies__form-container {
     flex-direction: row;
+  }
+
+  .movies__search-error {
+    transform: translateY(-80px);
+    justify-content: center;
+    display: flex;
   }
 }

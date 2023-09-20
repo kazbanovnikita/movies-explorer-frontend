@@ -1,17 +1,15 @@
 import "./Register.css";
 import Form from "../Form/Form";
-import {useFormValidate} from "../../utils/hooks/useFormValidate"
-import { validateEmail, validateName} from "../../utils/constants"
+import { useFormValidate } from "../../utils/hooks/useFormValidate";
+import { validateEmail, validateName } from "../../utils/constants";
 
-function Register({onRegister, setValues}) {
-
-  const { values, handleChange, errors, isValid } = useFormValidate()
-
+function Register({ onRegister, setValues }) {
+  const { values, handleChange, errors, isValid } = useFormValidate();
 
   function handleSubmit(event) {
     event.preventDefault();
     onRegister(values);
-    setValues({email: '', password: ''})
+    setValues({ email: "", password: "" });
   }
 
   return (
@@ -20,7 +18,7 @@ function Register({onRegister, setValues}) {
         congrats={"Добро пожаловать!"}
         buttonText={"Зарегистрироваться"}
         onSubmit={handleSubmit}
-        isValid={isValid}
+        isValid={isValid && validateEmail(values.email).message === ""}
         reg
       >
         <label className="register__label" htmlFor="name">
@@ -36,9 +34,11 @@ function Register({onRegister, setValues}) {
           minLength={2}
           maxLength={40}
           onChange={handleChange}
-          value={values.name ?? ''}
+          value={values.name ?? ""}
         />
-        <span className="register__error">{errors.name || validateName(values.name).message}</span>
+        <span className="register__error">
+          {errors.name || validateName(values.name).message}
+        </span>
         <label className="register__label" htmlFor="email">
           E-mail
         </label>
@@ -50,9 +50,11 @@ function Register({onRegister, setValues}) {
           placeholder="Email"
           required
           onChange={handleChange}
-          value={values.email ?? ''}
+          value={values.email ?? ""}
         />
-        <span className="register__error">{errors.email || validateEmail(values.email).message}</span>
+        <span className="register__error">
+          {errors.email || validateEmail(values.email).message}
+        </span>
         <label className="register__label" htmlFor="password">
           Пароль
         </label>
@@ -66,7 +68,7 @@ function Register({onRegister, setValues}) {
           maxLength={30}
           required
           onChange={handleChange}
-          value={values.password ?? ''}
+          value={values.password ?? ""}
         />
         <span className="register__error">{errors.password}</span>
       </Form>
