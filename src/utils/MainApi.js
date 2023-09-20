@@ -81,5 +81,5 @@ class Api {
 
 
 export const api = new Api({
-  baseUrl: "https://api.nik24-mesto.nomoredomains.work",
+  baseUrl: "https://api.nik24-movie-explorer.nomoreparties.sbs",
 });
