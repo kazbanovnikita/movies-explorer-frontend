@@ -1,5 +1,5 @@
 export const baseUrl = "https://api.nik24-movie-explorer.nomoreparties.sbs";
-
+///
 function checkResponse(res) {
   if (res.ok) {
     return res.json();
