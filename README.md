@@ -7,3 +7,4 @@ Frontend: https://nik24-movie-explorer.nomoredomainsicu.ru
 Backend: https://nik24-movie-explorer.nomoredomainsicu.ru/
 
 Ссылка на пул реквест: https://github.com/kazbanovnikita/movies-explorer-frontend/pull/2
+
