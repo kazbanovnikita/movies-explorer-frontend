@@ -101,7 +101,6 @@ function Movies({ onLike, savedMovies}) {
   }, []);
 */
   useEffect(() => {
-    getAllMovies();
     if (shortFilms) {
       const arr = filterShortMovies(getFilteredMovies(allMovie, searchRequest));
       setFilteredMovies(arr);
