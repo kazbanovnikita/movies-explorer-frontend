@@ -1,0 +1,17 @@
+@import url('./vendors/normalize.css');
+@import url('./vendors/fonts/fonts.css');
+
+.page {
+  margin: 0;
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #202020
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
